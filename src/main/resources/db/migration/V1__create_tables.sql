@@ -1,0 +1,13 @@
+CREATE TABLE pre_cadastro (
+    id BIGSERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    data_cadastro TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE contato (
+    id BIGSERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mensagem TEXT NOT NULL,
+    data_envio TIMESTAMP NOT NULL DEFAULT NOW()
+);
