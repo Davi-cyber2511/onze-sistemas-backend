@@ -14,8 +14,8 @@ public class PreCadastroService {
     @Autowired
     private PreCadastroRepository repository;
 
-    @Autowired
-    private JavaMailSender mailSender;
+//    @Autowired
+//    private JavaMailSender mailSender;
 
     @Value("${app.mail.destino}")
     private String mailDestino;
@@ -24,11 +24,12 @@ public class PreCadastroService {
         PreCadastro pre = new PreCadastro(email);
         repository.save(pre);
 
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo(mailDestino);
-        msg.setSubject("Novo pré-cadastro — Onze Sistemas");
-        msg.setText("Um visitante deixou o e-mail:\n\n" + email);
-        mailSender.send(msg);
+        // TODO: reativar envio de e-mail após configurar SMTP
+        // SimpleMailMessage msg = new SimpleMailMessage();
+        // msg.setTo(mailDestino);
+        // msg.setSubject("Novo pré-cadastro — Onze Sistemas");
+        // msg.setText("Um visitante deixou o e-mail:\n\n" + email);
+        // mailSender.send(msg);
 
         return pre;
     }
