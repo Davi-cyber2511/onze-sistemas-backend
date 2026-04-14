@@ -17,8 +17,8 @@ public class PreCadastroService {
 //    @Autowired
 //    private JavaMailSender mailSender;
 
-    @Value("${app.mail.destino}")
-    private String mailDestino;
+//    @Value("${app.mail.destino}")
+//    private String mailDestino;
 
     public PreCadastro salvar(String email) {
         PreCadastro pre = new PreCadastro(email);
